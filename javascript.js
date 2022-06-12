@@ -1,4 +1,4 @@
-const playerSelection = "Rock";
+const playerSelection = prompt("Please input Rock,Paper or Scissors");
 const computerSelection = computerPlay();
 
 function computerPlay() {
@@ -21,15 +21,42 @@ function computerPlay() {
 }*/
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == "Rock" && computerSelection == 2) {
-    console.log("Player wins");
-  } else if (playerSelection == "Rock" && computerSelection == 3) {
+  //rock
+  if (playerSelection === "Rock" && computerSelection == 1) {
+    console.log("Tie");
+  } else if (playerSelection == "Rock" && computerSelection == 2) {
     console.log("Computer wins!");
   } else if (playerSelection == "Rock" && computerSelection == 3) {
+    console.log("Player wins!");
+    //paper
+  } else if (playerSelection == "Paper" && computerSelection == 1) {
+    console.log("Player wins!");
+  } else if (playerSelection == "Paper" && computerSelection == 2) {
+    console.log("Tie!");
+  } else if (playerSelection == "Paper" && computerSelection == 3) {
     console.log("Computer wins!");
   }
+  //Scissors
+  else if (playerSelection == "Scissors" && computerSelection == 1) {
+    console.log("Computer wins!");
+  } else if (playerSelection == "Scissors" && computerSelection == 2) {
+    console.log("Player wins!");
+  } else if (playerSelection == "Scissors" && computerSelection == 3) {
+    console.log("Tie!");
+  } else {
+    ("Please input Rock, Paper or Scissors");
+  }
 }
-
-function game() {}
-
-prompt();
+playRound(playerSelection, computerSelection);
+/*function game() {
+  //Play game 5 times
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = "Rock";
+    const computerSelection = computerPlay();
+    // Call playRound function, passing in newly returned values
+    // from the playerPlay and computerPlay functions
+    const currentRound = playRound(playerSelection, computerSelection);
+    // Log our result
+    console.log(currentRound);
+  }
+}*/
